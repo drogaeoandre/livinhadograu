@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>droga eh a livinha??</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #f0f0f0; /* Fundo claro */
+        }
+        #question {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 15px 30px; 
+            font-size: 1.5em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff; /* Azul */
+            color: white;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+        .button:hover {
+            background-color: #0056b3; /* Azul escuro */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="question">quer namorar mais eu, puntinha?</div>
+        <button class="button" id="yes">Sim</button>
+        <button class="button" id="no">Não</button>
+    </div>
+
+    <script>
+        // Função para exibir a mensagem de namoro
+        function showLoveMessage() {
+            document.getElementById('container').innerHTML = "<h1>vai fica quereno</h1>";
+        }
+
+        // Função para mover o botão "Não"
+        function moveButton() {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            const newX = Math.random() * (windowWidth - 200); // 200 é a largura aproximada do botão
+            const newY = Math.random() * (windowHeight - 100); // 100 é a altura aproximada do botão
+
+            document.getElementById('no').style.position = 'absolute';
+            document.getElementById('no').style.left = newX + 'px';
+            document.getElementById('no').style.top = newY + 'px';
+        }
+
+        // Adicionando eventos de clique
+        document.getElementById('yes').onclick = showLoveMessage;
+        document.getElementById('no').onclick = moveButton;
+    </script>
+</body>
+</html>
